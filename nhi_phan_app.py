@@ -167,7 +167,6 @@ with tab3:
             """, unsafe_allow_html=True)
         except:
             st.error("Lỗi định dạng!")
-])
 with tab4:
     st.header("➕ Cộng hai số Nhị phân")
     col1, col2 = st.columns(2)
@@ -253,6 +252,23 @@ with tab7:
                 st.info(f"Thập phân: {quotient} dư {remainder}")
         except ValueError:
             st.error("Lỗi: Chỉ được nhập 0 và 1!")
+
+# 5. CHÂN TRANG ĐỘC QUYỀN
+st.markdown("---")
+st.markdown(
+    """
+    <div style='text-align: center; padding: 20px;'>
+        <h3 style='color: #FFD700; text-shadow: 2px 2px 10px #FFD700;'>
+            👑 PhucKing® Premium System 👑
+        </h3>
+        <p style='color: #4CAF50; font-weight: bold; letter-spacing: 2px;'>
+            ALL RIGHTS RESERVED © 2026
+        </p>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
 
 
 
