@@ -141,57 +141,57 @@ with tab1:
             for ky_tu in du_lieu:
                 ma_np = format(ord(ky_tu), '08b')
                 st.write(f"**{ky_tu}** : `{ma_np}`")
-# --- 1. CÀI ĐẶT GIAO DIỆN (Chỉnh ở đây để máy tự nhớ, không hiện chữ thừa) ---
-                    DO_CAO = "0px"          # 0px là mỏng nhất, 2px là mỏng vừa
-                    MAU_CHU = "white"       # Ép chữ mã nhị phân luôn màu trắng
-                    KHOANG_CACH_KHUNG = "2px" # Khoảng cách giữa các dòng ký tự
+        # --- 1. CÀI ĐẶT GIAO DIỆN (Chỉnh ở đây để máy tự nhớ, không hiện chữ thừa) ---
+            DO_CAO = "0px"          # 0px là mỏng nhất, 2px là mỏng vừa
+            MAU_CHU = "white"       # Ép chữ mã nhị phân luôn màu trắng
+            KHOANG_CACH_KHUNG = "2px" # Khoảng cách giữa các dòng ký tự
                     
-                    # --- 2. HIỂN THỊ TỪNG KÝ TỰ ---
-                    st.info(f"Mã nhị phân từng ký tự của '{du_lieu}':")
-                    for ky_tu, ma_np in zip(du_lieu, danh_sach_nhi_phan):
-                        st.markdown(f"""
-                            <div style="
-                                background-color: #2b2b2b; 
-                                padding: {DO_CAO} 12px; 
-                                border-radius: 6px; 
-                                border: 1px solid #444; 
-                                margin-bottom: {KHOANG_CACH_KHUNG}; 
-                                width: fit-content;
-                                display: flex;
-                                align-items: center;
-                                gap: 10px;">
-                                <span style="color: #4CAF50; font-weight: bold; font-size: 14px;">{ky_tu} :</span> 
-                                <code style="
-                                    color: {MAU_CHU} !important; 
-                                    background: transparent; 
-                                    border: none;
-                                    font-size: 14px;
-                                    font-family: monospace;">
-                                    {ma_np}
-                                </code>
-                            </div>
-                        """, unsafe_allow_html=True)
+        # --- 2. HIỂN THỊ TỪNG KÝ TỰ ---
+            st.info(f"Mã nhị phân từng ký tự của '{du_lieu}':")
+            for ky_tu, ma_np in zip(du_lieu, danh_sach_nhi_phan):
+                st.markdown(f"""
+                    <div style="
+                        background-color: #2b2b2b; 
+                        padding: {DO_CAO} 12px; 
+                        border-radius: 6px; 
+                        border: 1px solid #444; 
+                        margin-bottom: {KHOANG_CACH_KHUNG}; 
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;">
+                        <span style="color: #4CAF50; font-weight: bold; font-size: 14px;">{ky_tu} :</span> 
+                        <code style="
+                            color: {MAU_CHU} !important; 
+                            background: transparent; 
+                            border: none;
+                            font-size: 14px;
+                            font-family: monospace;">
+                            {ma_np}
+                        </code>
+                    </div>
+                """, unsafe_allow_html=True)
 
-                    # --- 3. HIỂN THỊ NGUYÊN CÂU 
-                    st.markdown("---")
-                    ket_qua_nguyen_cau = " ".join(danh_sach_nhi_phan)
-                    st.markdown(f"""
-                        <div style="
-                            background-color: #2b2b2b; 
-                            padding: 10px 15px; 
-                            border-radius: 10px; 
-                            border: 1px solid #555;">
-                            <span style="color: #4CAF50; font-weight: bold; font-size: 14px;">✨ Kết quả nguyên câu:</span>
-                            <br>
-                            <code style="
-                                color: {MAU_CHU} !important; 
-                                font-size: 16px; 
-                                background: transparent;
-                                word-break: break-all;">
-                                {ket_qua_nguyen_cau}
-                            </code>
-                        </div>
-                    """, unsafe_allow_html=True)
+            # --- 3. HIỂN THỊ NGUYÊN CÂU 
+            st.markdown("---")
+            ket_qua_nguyen_cau = " ".join(danh_sach_nhi_phan)
+            st.markdown(f"""
+                <div style="
+                    background-color: #2b2b2b; 
+                    padding: 10px 15px; 
+                    border-radius: 10px; 
+                    border: 1px solid #555;">
+                    <span style="color: #4CAF50; font-weight: bold; font-size: 14px;">✨ Kết quả nguyên câu:</span>
+                    <br>
+                    <code style="
+                        color: {MAU_CHU} !important; 
+                        font-size: 16px; 
+                        background: transparent;
+                        word-break: break-all;">
+                        {ket_qua_nguyen_cau}
+                    </code>
+                </div>
+            """, unsafe_allow_html=True)
 with tab2:
     st.header("Đổi sang Thập Phân")
     nhi_phan = st.text_input("Nhập mã nhị phân:", key="input2")
