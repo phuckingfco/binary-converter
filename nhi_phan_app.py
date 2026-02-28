@@ -132,7 +132,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
 
 with tab1:
     st.header("Đổi sang Nhị Phân")
-    du_lieu = st.text_input("Nhập vào số hoặc chữ:", key="input1")
+    du_lieu = st.text_input("Nhập vào số hoặc chữ:", key="input1", placeholder="Ví dụ: 36 hoặc Thanh Hoa")
     if du_lieu:
         if du_lieu.isdigit():
             ket_qua = bin(int(du_lieu)).replace('0b', '')
@@ -141,6 +141,27 @@ with tab1:
             for ky_tu in du_lieu:
                 ma_np = format(ord(ky_tu), '08b')
                 st.write(f"**{ky_tu}** : `{ma_np}`")
+
+                    # --- 3. HIỂN THỊ NGUYÊN CÂU 
+                    st.markdown("---")
+                    ket_qua_nguyen_cau = " ".join(danh_sach_nhi_phan)
+                    st.markdown(f"""
+                        <div style="
+                            background-color: #2b2b2b; 
+                            padding: 10px 15px; 
+                            border-radius: 10px; 
+                            border: 1px solid #555;">
+                            <span style="color: #4CAF50; font-weight: bold; font-size: 14px;">✨ Kết quả nguyên câu:</span>
+                            <br>
+                            <code style="
+                                color: {MAU_CHU} !important; 
+                                font-size: 16px; 
+                                background: transparent;
+                                word-break: break-all;">
+                                {ket_qua_nguyen_cau}
+                            </code>
+                        </div>
+                    """, unsafe_allow_html=True)
 
 with tab2:
     st.header("Đổi sang Thập Phân")
@@ -268,6 +289,7 @@ st.markdown(
     """, 
     unsafe_allow_html=True
 )
+
 
 
 
